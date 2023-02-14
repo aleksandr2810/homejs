@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task7</title>
+</head>
+<body>
+	<h1>
+		Задача №7
+	</h1>
+	<p>
+		З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. 
+		Обчислити вартість кожного товару окремо та загальну вартість. 
+		Вивести чек (як у супермаркеті) використовуючи елементи розмітки. 
+	</p>
+	<hr>
+	<script>
+		// Вводимо необхідні данні
+		let quantityOfGoodsOne = parseInt(prompt('Введіть кількість товару першого', '0'))
+		let priceProductOne = parseFloat(prompt('Введіть вартість товару першого', '0'))
+		let quantityOfGoodsTwo = parseInt(prompt('Введіть кількість товару другого', '0'))
+		let priceProductTwo = parseFloat(prompt('Введіть вартість товару другого', '0'))
+		let quantityOfGoodsThree = parseInt(prompt('Введіть кількість товару третього', '0'))
+		let priceProductThree = parseFloat(prompt('Введіть вартість товару третього', '0'))
+		//Знаходимо результат
+		let sumPriceProductOne = quantityOfGoodsOne * priceProductOne
+		let sumPriceProductTwo = quantityOfGoodsTwo * priceProductTwo
+		let sumPriceProductThree = quantityOfGoodsThree * priceProductThree
+		let sumPriceProductAll = sumPriceProductOne + sumPriceProductTwo + sumPriceProductThree
+		// Віводимо результат
+		document.write(`
+		<h1>Чек :</h1>
+		<p>
+		Кількість товару першого - ${quantityOfGoodsOne} <br>
+		Вартість товару першого  - ${priceProductOne} <br>
+		Загальна вартість за перший товар - ${sumPriceProductOne}
+		</p>
+		<p>
+		Кількість товару другого - ${quantityOfGoodsTwo} <br>
+		Вартість товару другого  - ${priceProductTwo} <br>
+		Загальна вартість за другий товар - ${sumPriceProductTwo}
+		</p>
+		<p>
+		Кількість товару третього - ${quantityOfGoodsThree} <br>
+		Вартість товару третього  - ${priceProductThree} <br>
+		Загальна вартість за третій товар - ${sumPriceProductThree}
+		</p>
+		<h3>Итого :</h3>
+		Загальна вартість покупок - ${sumPriceProductAll}
+		`)
+	</script>
+</body>
+</html>

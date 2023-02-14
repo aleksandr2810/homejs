@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task1</title>
+</head>
+<body>
+	<h1>
+		Задача №1
+	</h1>
+	<p>
+		Обчислити значення виразів<br>
+		1) S1=a+12+b <br>
+		2) S2=квадратний корень из(a+b)/2a <br> 
+		3) S3=корень в 3 степени(a+b)c <br>
+		4) S4=sin⁡(a/-b) 
+	</p>
+	<hr>
+	<script>
+		// Вводимо необхідні данні
+		let a = parseInt(prompt('Введите a', '0'))
+		let b = parseInt(prompt('Введите b', '0'))
+		let c = parseInt(prompt('Введите c', '0'))
+		//Знаходимо результат
+		let s1 = a + 12 + b
+		let s2 = Math.sqrt((a + b)/(2*a))
+		let s3 = Math.cbrt((a + b)*c)
+		let s4 = Math.sin(a/-b)
+		// Віводимо результат
+		document.write(`
+		1) S1=${s1} <br>
+		2) S2=${s2} <br>
+		3) S3=${s3} <br>
+		4) S4=${s4}
+		`)
+	</script>
+</body>
+</html>
