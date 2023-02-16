@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task3</title>
+</head>
+
+<body>
+	<h1>
+		Задача №3
+	</h1>
+	<p>
+		Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.
+	</p>
+	<hr>
+	<script>
+		// Вводимо необхідні данні
+		let randomNumber = Math.ceil(Math.random() * 5)
+		let firstAttemptAtGuessing = parseInt(prompt('Введите  число від 0 до 5', '1'))
+		let secondAttemptAtGuessing = parseInt(prompt('Введите  число від 0 до 5', '1'))
+		let result
+		// Знаходимо результат
+		if (firstAttemptAtGuessing === randomNumber || secondAttemptAtGuessing === randomNumber)
+			result = `Ви вгадали число, оно ${randomNumber}`
+		else result = `Спробуйте ще раз`
+		// Віводимо результат
+		document.write(result)
+	</script>
+</body>
+
+</html>

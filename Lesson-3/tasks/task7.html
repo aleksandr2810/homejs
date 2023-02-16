@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task7</title>
+</head>
+
+<body>
+	<h1>
+		Задача №7
+	</h1>
+	<p>
+		З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься
+	</p>
+	<hr>
+	<script>
+		// Вводимо необхідні данні
+		let monthNumber = parseInt(prompt('Введите номер місяця', '1'))
+		let result
+		//Знаходимо результат
+		if (monthNumber <= 2 || monthNumber === 12) result = 'winter'
+		else if (monthNumber <= 5) result = 'spring'
+		else if (monthNumber <= 8) result = 'summer'
+		else result = 'autumn'
+		// Віводимо результат
+		document.write(result)
+	</script>
+</body>
+
+</html>
