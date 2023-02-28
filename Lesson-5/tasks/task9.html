@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task9</title>
+</head>
+
+<body>
+	<h1>
+		Задача №9
+	</h1>
+	<p>
+		Користувач загадує число. Комп’ютер задає питання поки не вгадає число користувача (використати confirm).
+	</p>
+	<hr>
+	<script>
+
+		const userSpecifiedNumber = parseInt(prompt('Загадай число от 1 до 5'))
+
+		for (; ;) {
+			const computerRandomNumber = 1 + Math.floor(Math.random() * 5)
+			const computerAsksQuestion = confirm(`Це число ${computerRandomNumber}?`)
+			if (computerAsksQuestion) {
+				if (computerRandomNumber !== userSpecifiedNumber)
+					document.write(`Ви говорите неправду`)
+				else
+					document.write(`Ви вгадали , це число ${userSpecifiedNumber}`)
+				break
+			}
+		}
+
+	</script>
+</body>
+
+</html>

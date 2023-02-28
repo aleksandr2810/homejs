@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task12</title>
+</head>
+
+<body>
+	<h1>
+		Задача №12
+	</h1>
+	<p>
+		Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається як одне з
+		чотирьох зображень. Вивести ці зображення і повідомити виграш користувача (три перших зображення 100 грн,
+		три других – 200, три третіх – 500, три четвертих зображення – 1000грн). Використати цикли і switch (для
+		вибору зображення за номером).
+	</p>
+	<hr>
+
+	<script>
+		let counter1 = 0
+		let counter2 = 0
+		let counter3 = 0
+		let counter4 = 0
+		for (i = 0; i < 3; i++) {
+			let imageRandomNumber = 1 + Math.floor(Math.random() * 4)
+			document.write(`<img src="./image/${imageRandomNumber}.jpg" alt="#" style="max-width: 200px;"> `)
+			switch (imageRandomNumber) {
+			case 1: counter1++
+				break;
+				case 2: counter2++
+				break;
+				case 3: counter3++
+				break;
+				case 4: counter4++
+				break;
+				}
+		}
+		if(counter1 === 3) document.write(`You win: 100$`)
+		if(counter2 === 3) document.write(`You win: 200$`)
+		if(counter3 === 3) document.write(`You win: 500$`)
+		if(counter4 === 3) document.write(`You win: 1000$`)
+
+	</script>
+</body>
+
+</html>

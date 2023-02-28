@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task15</title>
+</head>
+
+<body>
+	<h1>
+		Задача №15
+	</h1>
+	<p>
+		Користувач поступово вводить показники температури протягом року. Знайти середню температуру.
+	</p>
+	<hr>
+	<script>
+		const maxTemperatureModulo = 36
+		let sumTemperaturePerYear = 0
+		for (i = 0; i < 365; i++) {
+			let user = 1 + Math.floor(((Math.random() < 0.5) ? -1 : 1) * Math.random() * maxTemperatureModulo)
+			console.log(user);
+			sumTemperaturePerYear += user
+		}
+		let averageTemperaturePerYear = (sumTemperaturePerYear / 365).toFixed(1)
+		
+		document.write(`Total Temperature: ${averageTemperaturePerYear} по Цельсію`)
+	</script>
+</body>
+
+</html>
