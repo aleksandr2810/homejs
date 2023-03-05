@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task6</title>
+</head>
+
+<body>
+	<h1>
+		Задача №6
+	</h1>
+	<p>
+		Створити окремі функції, які переводять:
+		Сантиметри у дюйми;
+		Кілограми у фунти;
+		Кілометри у милі.
+	</p>
+	<hr>
+	<script>
+
+		function getCentimetersToInches(centimeters) {
+			const inches = centimeters / 2.54
+			return inches
+		}
+
+		function getKilogramsToPounds(kilograms) {
+			const pounds = kilograms * 2.205
+			return pounds
+		}
+
+		function getKilometersToMiles(kilometers) {
+			const miles = kilometers / 1.609
+			return miles
+		}
+
+		const centimetersToInches = getCentimetersToInches(2)
+		const kilogramsToPounds = getKilogramsToPounds(2)
+		const kilometersToMiles = getKilometersToMiles(2)
+
+		document.write(`centimetersToInches: ${centimetersToInches}, kilogramsToPounds: ${kilogramsToPounds}, kilometersToMiles: ${kilometersToMiles}`)
+	</script>
+</body>
+
+</html>

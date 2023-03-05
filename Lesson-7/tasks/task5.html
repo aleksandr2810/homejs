@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task5</title>
+</head>
+
+<body>
+	<h1>
+		Задача №5
+	</h1>
+	<p>
+		Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість
+		додатних, кількість більших за 100.
+	</p>
+	<hr>
+	<script>
+
+		let evenCounter = 0
+		let positiveCounter = 0
+		let counterAfterHundred = 0
+
+		function getResultComputing() {
+			const firstNumber = parseInt(prompt('Дайте перше число'))
+			const secondNumber = parseInt(prompt('Дайте друге число'))
+			const thirdNumber = parseInt(prompt('Дайте третє число'))
+
+			if (firstNumber % 2 === 0) evenCounter++
+			if (secondNumber % 2 === 0) evenCounter++
+			if (thirdNumber % 2 === 0) evenCounter++
+
+			if (firstNumber > 0) positiveCounter++
+			if (secondNumber > 0) positiveCounter++
+			if (thirdNumber > 0) positiveCounter++
+
+			if (firstNumber > 100) counterAfterHundred++
+			if (secondNumber > 100) counterAfterHundred++
+			if (thirdNumber > 100) counterAfterHundred++
+
+			return evenCounter, positiveCounter, counterAfterHundred
+		}
+
+		getResultComputing()
+
+		document.write(`Кількість парних: ${evenCounter}, Кількість
+		додатних: ${positiveCounter}, Кількість більших за 100: ${counterAfterHundred}`)
+	</script>
+</body>
+
+</html>

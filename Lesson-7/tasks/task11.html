@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task11</title>
+</head>
+
+<body>
+	<h1>
+		Задача №11
+	</h1>
+	<p>
+		Дано покази температур (довільна кількість). Розробити функцію, яка дозволить знайти середнє значення для додатних
+		показів температури.
+	</p>
+	<hr>
+	<script>
+
+		function getAverageValueOfPositiveTemperatures() {
+			const numberOfTemperatureReadings = parseInt(prompt('Введіть кількість показників температури'))
+			let sum = 0
+			let counter = 0
+			for (let i = 1; i <= numberOfTemperatureReadings; i++) {
+				let temperatureReadings = parseInt(prompt(`Введіть ${i} показник температури`))
+				if (temperatureReadings > 0) {
+					sum += temperatureReadings
+					counter++
+				}
+			}
+			const averageValue = sum / counter
+			return averageValue
+		}
+		let result = getAverageValueOfPositiveTemperatures()
+		document.write(`Середнє значення для додатних показів температури: ${result}`)
+
+	</script>
+</body>
+
+</html>

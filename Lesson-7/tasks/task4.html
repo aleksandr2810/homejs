@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task4</title>
+</head>
+
+<body>
+	<h1>
+		Задача №4
+	</h1>
+	<p>
+		Створити окремі функції, які для 4 чисел знаходять:
+		1)суму;
+		2)добуток;
+		3)середнє арифметичне;
+		4)мінімальне значення.
+	</p>
+	<hr>
+	<script>
+
+		const firstNumber = parseInt(prompt('Дайте перше число'))
+		const secondNumber = parseInt(prompt('Дайте друге число'))
+		const thirdNumber = parseInt(prompt('Дайте третє число'))
+		const fourthNumber = parseInt(prompt('Дайте четверте число'))
+
+		function getSum() {
+			const sum = firstNumber + secondNumber + thirdNumber + fourthNumber
+			return sum
+		}
+
+		function getMultiplication() {
+			const multi = firstNumber * secondNumber * thirdNumber * fourthNumber
+			return multi
+		}
+
+		function getAverage() {
+			const average = (firstNumber + secondNumber + thirdNumber + fourthNumber) / 4
+			return average
+		}
+
+		function getMinValue() {
+			let min = Infinity
+			if (firstNumber < min) min = firstNumber
+			if (secondNumber < min) min = secondNumber
+			if (thirdNumber < min) min = thirdNumber
+			if (fourthNumber < min) min = fourthNumber
+			return min
+		}
+
+		const foundSum = getSum()
+		const foundMultiplication = getMultiplication()
+		const foundAverage = getAverage()
+		const foundMinValue = getMinValue()
+
+		document.write(`foundSum: ${foundSum}, foundMultiplication: ${foundMultiplication}, foundAverage: ${foundAverage}, foundMinValue: ${foundMinValue}`)
+	</script>
+</body>
+
+</html>

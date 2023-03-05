@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task8</title>
+</head>
+
+<body>
+	<h1>
+		Задача №8
+	</h1>
+	<p>
+		Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень (шляхи до зображень передаються у
+		функцію)
+	</p>
+	<hr>
+	<script>
+
+		function getImage() {
+			let imageRandomNumber = 1 + Math.floor(Math.random() * 4)
+			document.write(`<img src="./../../Lesson-5/tasks/image/${imageRandomNumber}.jpg" alt="#" style="max-width: 200px;">`)
+		}
+
+		getImage()
+
+	</script>
+</body>
+
+</html>
