@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task9</title>
+</head>
+
+<body>
+	<h1>
+		Задача №9
+	</h1>
+	<p>
+		Морський бій. Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних кораблів.
+		Комп’ютер довільно розміщує ці одиночні кораблі у масиві по один у клітинці (якщо у клітинці 0, то клітинка пуста,
+		якщо 1 – то це означає, що там є корабель. Користувач вводить номер клітинки, куди стріляє. Гра продовжується до
+		тих пір, поки не будуть потоплені усі кораблі.
+	</p>
+	<hr>
+	<script>
+
+		const userField = parseInt(prompt('Введіть кількість клітинок'))
+		let numberOfShips = parseInt(prompt('Введіть кількість одиночних кораблів'))
+
+		function seaBattle(params1, params2) {
+			let field = new Array(params1)
+			for (let i = 0; i < field.length; i++) {
+				field[i] = 0
+			}
+			let restShips = params2
+			for (let i = 0; i < restShips; i++) {
+				let shipPosition = Math.floor(Math.random() * params1)
+				if (field[shipPosition] === 0) {
+					field[shipPosition] = 1
+				} else restShips++
+			}
+			for (; ;) {
+				const cellNumber = parseInt(prompt(`Введіть номер клітинки від 0 до ${params1 - 1}`))
+				if (field[cellNumber] === 1) {
+					field[cellNumber] = 0
+					params2--
+				}
+				if (params2 === 0) break
+			}
+			return params2
+		}
+
+		const result = seaBattle(userField, numberOfShips)
+
+		document.write(`залишилось ${result} кораблів`)
+	</script>
+</body>
+
+</html>

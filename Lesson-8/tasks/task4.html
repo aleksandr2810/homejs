@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task4</title>
+</head>
+
+<body>
+	<h1>
+		Задача №4
+	</h1>
+	<p>
+		Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які :
+		• починаються на букву «А»;
+		• перша і остання літери співпадають;
+		• складаються з більше ніш 5 символів;
+	</p>
+	<hr>
+	<script>
+
+		const one = ['a', 1, 2, 3, 4, 'b']
+		const two = ['a', 4, 3, 2, 1, 'a']
+		const three = ['a', 2, 3, 4, 5, 'a']
+		const four = [1, 2, 3, 4]
+
+		function amountNumberCars(...arr) {
+			let countA = 0
+			for (let i = 0; i < arr.length; i++) {
+				if (arr[i][0] === 'a') countA++
+			}
+			return countA
+		}
+		function getCountCoincidence(...arr) {
+			let countCoincidence = 0
+			for (let i = 0; i < arr.length; i++) {
+				if (arr[i][0] === arr[i][arr[i].length - 1]) countCoincidence++
+			}
+			return countCoincidence
+		}
+
+		function getCountMore(...arr) {
+			let countMore = 0
+			for (let i = 0; i < arr.length; i++) {
+				if ([arr[i].length] > 5) countMore++
+			}
+			return countMore
+		}
+		const result3 = getCountMore(one, two, three, four)
+
+		const result2 = getCountCoincidence(one, two, three, four)
+
+		const result = amountNumberCars(one, two, three, four)
+
+		document.write(`
+		починаються на букву «А» : ${result} разів <br>
+		перша і остання літери співпадають : ${result2} разів <br>
+		складаються з більше ніш 5 символів : ${result3} разів
+		`)
+	</script>
+</body>
+
+</html>

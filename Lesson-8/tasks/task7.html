@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task7</title>
+</head>
+
+<body>
+	<h1>
+		Задача №7
+	</h1>
+	<p>
+		Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:
+		за весь рік;
+		у першій половині року;
+		у другій половині року;
+		за літо;
+		за ІІ квартал;
+		за парні місяці (з парними номерами);
+		за місяці, які є початковими у сезоні (весна, літо, осінь, зима).
+
+	</p>
+	<hr>
+	<script>
+
+		//let annualPayments = [1000, 20, 31, 345, 154, 876, 321, 639, 371, 959, 1098, 521]
+		let annualPayments = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+
+		function firstHalfOfTheYear(arr) {
+			let sum = 0
+			for (let i = 0; i < (arr.length - 6); i++) {
+				sum += arr[i]
+			}
+			return sum
+		}
+
+		function secondHalfOfTheYear(arr) {
+			let sum = 0
+			for (let i = 6; i < (arr.length); i++) {
+				sum += arr[i]
+			}
+			return sum
+		}
+
+		function getMoneySummer(arr) {
+			let sum = 0
+			for (let i = 5; i < 8; i++) {
+				sum += arr[i]
+			}
+			return sum
+		}
+
+		function getSecondQuarter(arr) {
+			let sum = 0
+			for (let i = 2; i < 5; i++) {
+				sum += arr[i]
+			}
+			return sum
+		}
+
+		function getPairedMonths(arr) {
+			let sum = 0
+			for (let i = 1; i <= (arr.length); i++) {
+				if (i % 2 === 0)
+					sum += arr[i - 1]
+			}
+			return sum
+		}
+
+		function getStartMonthSeason(arr) {
+			let sum = 0
+			for (let i = 0; i < (arr.length); i++) {
+				switch (i) {
+					case 2: sum += arr[i]
+						break
+					case 5: sum += arr[i]
+						break
+					case 8: sum += arr[i]
+						break
+					case 11: sum += arr[i]
+						break
+				}
+			}
+			return sum
+		}
+
+		const result = firstHalfOfTheYear(annualPayments)
+		const result2 = secondHalfOfTheYear(annualPayments)
+		const result3 = getMoneySummer(annualPayments)
+		const result4 = getSecondQuarter(annualPayments)
+		const result5 = getPairedMonths(annualPayments)
+		const result6 = getStartMonthSeason(annualPayments)
+
+
+		document.write(`сумарна кількість грошей за першу половину року: ${result} грн<br>`)
+		document.write(`сумарна кількість грошей за другу половину року: ${result2} грн<br>`)
+		document.write(`сумарна кількість грошей за літо: ${result3} грн<br>`)
+		document.write(`сумарна кількість грошей за 2 квартал: ${result4} грн<br>`)
+		document.write(`сумарна кількість грошей за парні місяці: ${result5} грн<br>`)
+		document.write(`сумарна кількість грошей за місяці, які є початковими у сезоні: ${result6} грн<br>`)
+
+
+	</script>
+</body>
+
+</html>
