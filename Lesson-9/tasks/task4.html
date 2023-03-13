@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task4</title>
+</head>
+
+<body>
+	<h1>
+		Задача №4
+	</h1>
+	<p>
+		Дано масив елементів. Вивести на екран елементи, що більші за 100
+	</p>
+	<hr>
+	<script>
+
+		const arrayElement = [23, 123, 456, 32, 100, 678, 4, 765]
+
+		function getArrayElemMore100(arr) {
+			for (let i of arr) {
+				if (i > 100)
+					document.write(`${i}, `)
+			}
+		}
+		getArrayElemMore100(arrayElement)
+
+
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task8</title>
+</head>
+
+<body>
+	<h1>
+		Задача №8
+	</h1>
+	<p>
+		Дано масив номерів авто. Сформувати новий масив тих, які починаються на «А»
+	</p>
+	<hr>
+	<script>
+
+		const arrayNumberAuto = [['a',1,0,0,0,'s'], ['s',1,2,0,0,'s'], ['a',3,0,0,0,'q'], ['r',2,0,0,0,'d'], ['a',5,0,0,0,'r']]
+
+		function getNewArrayNumberAuto(arr) {
+			const newArrayNumberAuto = arr.filter((el, i) => arr[i][0] === 'a'
+				)
+			return newArrayNumberAuto
+		}
+		const res = getNewArrayNumberAuto(arrayNumberAuto)
+		console.log(res)
+
+	</script>
+</body>
+
+</html>

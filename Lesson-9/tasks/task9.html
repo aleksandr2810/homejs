@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task9</title>
+</head>
+
+<body>
+	<h1>
+		Задача №9
+	</h1>
+	<p>
+		Дано масив імен. Сформувати масив з перших літер цих імен.
+	</p>
+	<hr>
+	<script>
+
+		const arrayNames = ['Alex', 'Lena', 'Evnika', 'Xenon']
+
+		function getNewArrayFirstLetter(arr) {
+			const newArrayFirstLetter = arr.map((el, i) => arr[i][0]
+			)
+			return newArrayFirstLetter
+		}
+		const res = getNewArrayFirstLetter(arrayNames)
+		console.log(res)
+
+	</script>
+</body>
+
+</html>
