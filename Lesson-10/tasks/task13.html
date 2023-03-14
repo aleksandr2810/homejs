@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task13</title>
+</head>
+
+<body>
+	<h1>
+		Задача №13
+	</h1>
+	<p>
+		Знайти індекс останньої ціни, що більше за 1000
+	</p>
+	<hr>
+	<script>
+
+		function getRandomArr(maxPrice, numberPrices) {
+			let arrPrice = []
+			for (let i = 0; i < numberPrices; i++) {
+				let randomNumber = 1 + Math.floor(Math.random() * maxPrice)
+				arrPrice.push(randomNumber)
+			}
+			return arrPrice
+		}
+		let resultArr = getRandomArr(10000, 10)
+		console.log(resultArr)
+
+		let lastPriceMore1000 = resultArr.reverse().find(el => el > 1000)
+		let indexLastPriceMore1000 = resultArr.reverse().indexOf(lastPriceMore1000)
+		console.log(indexLastPriceMore1000)
+	</script>
+</body>
+
+</html>

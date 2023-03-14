@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task4</title>
+</head>
+
+<body>
+	<h1>
+		Задача №4
+	</h1>
+	<p>
+		Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального
+	</p>
+	<hr>
+	<script>
+
+		function getRandomArr(maxPrice, numberPrices) {
+			let arrPrice = []
+			for (let i = 0; i < numberPrices; i++) {
+				let randomNumber = 1 + Math.floor(Math.random() * maxPrice)
+				arrPrice.push(randomNumber)
+			}
+			return arrPrice
+		}
+		let resultArr = getRandomArr(10000, 10)
+		console.log(resultArr)
+
+		let maxPrice = Math.max(...resultArr)
+		console.log(maxPrice)
+
+		let arrPricePercent = resultArr.map(el => el = el / (maxPrice / 100))
+		arrPricePercent.forEach((el, index, baseArr) => baseArr[index] = Math.ceil(el))
+		console.log(arrPricePercent)
+
+	</script>
+</body>
+
+</html>

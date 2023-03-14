@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task11</title>
+</head>
+
+<body>
+	<h1>
+		Задача №11
+	</h1>
+	<p>
+		Знайти індекс першої ціни, що більше за 1000
+	</p>
+	<hr>
+	<script>
+
+		function getRandomArr(maxPrice, numberPrices) {
+			let arrPrice = []
+			for (let i = 0; i < numberPrices; i++) {
+				let randomNumber = 1 + Math.floor(Math.random() * maxPrice)
+				arrPrice.push(randomNumber)
+			}
+			return arrPrice
+		}
+		let resultArr = getRandomArr(10000, 10)
+		console.log(resultArr)
+
+		let firstPriceMore1000 = resultArr.find(el => el > 1000)
+		let firstIndex = resultArr.indexOf(firstPriceMore1000)
+		console.log(firstIndex)
+	</script>
+</body>
+
+</html>

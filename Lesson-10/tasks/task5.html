@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task5</title>
+</head>
+
+<body>
+	<h1>
+		Задача №5
+	</h1>
+	<p>
+		Підрахувати кількість змін цін
+	</p>
+	<hr>
+	<script>
+
+		function getRandomArr(maxPrice, numberPrices) {
+			let arrPrice = []
+			for (let i = 0; i < numberPrices; i++) {
+				let randomNumber = 1 + Math.floor(Math.random() * maxPrice)
+				arrPrice.push(randomNumber)
+			}
+			return arrPrice
+		}
+		let resultArr = getRandomArr(10000, 10)
+		console.log(resultArr)
+
+		const numberPriceChanges = resultArr.reduce((prev, el, index, baseArr) => (
+			(baseArr[index] !== baseArr[index + 1] ? prev + 1 : prev)), 0)
+		console.log(numberPriceChanges)
+
+	</script>
+</body>
+
+</html>
