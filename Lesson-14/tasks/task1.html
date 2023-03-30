@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task1</title>
+</head>
+
+<body>
+	<h1>
+		Задача №1
+	</h1>
+	<p>
+		Описати масив об’єктів – сайтів розроблених компанією з такими властивостями
+		----- Властивості ------
+		назва компанії на час розробки (назву періодично змінюють)
+		власник компанії
+		споснсори (масив спонсорів)
+		* прізвище спонсора
+		* ім’я спонсора
+		* сума вкладень спонсора
+		рік випуску
+		вартість сайту
+	</p>
+	<hr>
+	<script>
+
+		let arrWebsite = [
+			{
+				title: 'company_1',
+				owner: 'owner_1',
+				sponsors: [
+					{
+						lastName: 'Ivanov',
+						firstName: 'Ivan',
+						sum: 100000
+					},
+					{
+						lastName: 'Petrov',
+						firstName: 'Petr',
+						sum: 200000
+					},
+					{
+						lastName: 'Sidorov',
+						firstName: 'Sid',
+						sum: 300000
+					}
+				],
+				yearOfIssue: 2008,
+				price: 5000
+			},
+			{
+				title: 'company_2',
+				owner: 'owner_2',
+				sponsors: [
+					{
+						lastName: 'Litrov',
+						firstName: 'Ivan',
+						sum: 1000000
+					},
+					{
+						lastName: 'Putrov',
+						firstName: 'Petr',
+						sum: 20000
+					},
+					{
+						lastName: 'Srilov',
+						firstName: 'Sid',
+						sum: 500000
+					}
+				],
+				yearOfIssue: 2010,
+				price: 500000
+			},
+			{
+				title: 'company_3',
+				owner: 'owner_3',
+				sponsors: [
+					{
+						lastName: 'Imurov',
+						firstName: 'Ivan',
+						sum: 10000
+					},
+					{
+						lastName: 'Pirogov',
+						firstName: 'Petr',
+						sum: 20000
+					},
+					{
+						lastName: 'Sitrov',
+						firstName: 'Sid',
+						sum: 30000
+					}
+				],
+				yearOfIssue: 2011,
+				price: 2000000
+			}
+		]
+
+		//-----------------1.Знайти загальну вартість усіх сайтів------------------
+
+		let sumTotal = arrWebsite.reduce((prevSum, site) => (prevSum + site.price), 0)
+		console.log(sumTotal)
+
+		//-----------------2.Кількість сайтів, що було зроблено між 2000 та 2009 рр----------------
+
+		let numberSite2000_2009 = arrWebsite.reduce((prevNum, site) => (site.yearOfIssue >=2000 && site.yearOfIssue <= 2009 ? prevNum + 1 : prevNum), 0)
+		console.log(numberSite2000_2009)
+
+		//-----------------3.Кількість сайтів, де сума спонсорських вкладень була більшою за 100000-----------
+
+		//Знаходимо суму спонсорських вкладень на кожному сайти
+		
+		let arrSponsorShipAmountEverySite = []
+		for (let i = 0; i < arrWebsite.length; i++) {
+			let sumSponsor = arrWebsite[i].sponsors.reduce((prevSum, sum) => (prevSum + sum.sum), 0)
+			arrSponsorShipAmountEverySite.push(sumSponsor)
+		}
+		console.log(arrSponsorShipAmountEverySite)
+
+		//Знаходимо Кількість сайтів
+
+		let numberSite = arrSponsorShipAmountEverySite.reduce((prevNum, site) => (site > 100000 ? prevNum + 1 : prevNum), 0)
+		console.log(numberSite)
+
+		//------------ 4.створити загальний список усіх спонсорів (поки можуть повторюватись, просто зібрати усі у масив)
+
+		let arrSponsors = []
+		for (let i = 0; i < arrWebsite.length; i++) {
+			let arr = arrWebsite[i].sponsors.map(el => `${el.lastName} ${el.firstName}`)
+			arrSponsors.push(arr)
+		}
+		console.log(arrSponsors.flat())
+
+		//-----------5.знайти рік, коли прибуток був найбільшим---------
+
+		let maxPrice = arrWebsite[0].price
+		let yearMaxPrice = arrWebsite[0].yearOfIssue
+		for (const i of arrWebsite) {
+			if(i.price >= maxPrice) {
+				maxPrice = i.price
+				yearMaxPrice = i.yearOfIssue
+			}
+		}
+		console.log(maxPrice)
+		console.log(yearMaxPrice)
+
+		//---------6.упорядкувати список за спаданням прибутку--------
+
+		arrWebsite.sort((el1, el2) => el2.price - el1.price)
+		console.log(arrWebsite)
+
+		//--------7.Створити 2 окремих списки з копіями об’єктів, що містять сайти з вартість до 10000 і більше 10000-------
+
+		let arrMore10000 = []
+		let arrLass10000 = []
+		for (let i = 0; i < arrWebsite.length; i++) {
+			if(arrWebsite[i].price > 10000) arrMore10000.push(arrWebsite[i])
+			else(arrLass10000.push(arrWebsite[i]))
+		}
+		let more10000 = JSON.parse(JSON.stringify(arrMore10000))
+
+		let lass10000 = JSON.parse(JSON.stringify(arrLass10000))
+		//more10000[0].title = 'company_4'
+		//console.log(arrMore10000)
+		//console.log(arrLass10000)
+		console.log(more10000)
+		console.log(lass10000)
+
+	</script>
+</body>
+
+</html>
