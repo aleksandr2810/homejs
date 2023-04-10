@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task5</title>
+</head>
+
+<body>
+	<h1>
+		Задача №5
+	</h1>
+	<p>
+		Розробити клас Baner
+		Поля
+		Масив об’єктів ( графічних зображень та посилань на сайти)
+
+
+		методи
+		Метод випадкового вибору об’єкта (графічного зображення та посилання)
+		Метод виведення випадкового банера
+	</p>
+	<hr>
+	<script>
+
+		class Baner {
+			constructor(arr) {
+				this.arr = arr
+			}
+			getRandomObj() {
+				const randomIndex = Math.floor(Math.random() * this.arr.length)
+				return this.arr[randomIndex]
+			}
+			randomBaner() {
+				let result = this.getRandomObj()
+				document.write(`${result.image}<br>${result.link}`)
+			}
+		}
+		let imageAndLink = new Baner([
+			{
+				image: '<img src="../image/cover.jpg" alt="#" width="200px">',
+				link: '<a href="https://www.fonts.com/web-fonts/google">link1</a>'
+			},
+			{
+				image: '<img src="../image/2023.jpg" alt="#" width="200px">',
+				link: '<a href="https://www.fonts.com/web-fonts/google">link2</a>'
+			},
+			{
+				image: '<img src="../image/2024.jpg" alt="#" width="200px">',
+				link: '<a href="https://www.fonts.com/web-fonts/google">link3</a>'
+			}
+		])
+		imageAndLink.randomBaner()
+
+	</script>
+</body>
+
+</html>

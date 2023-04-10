@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task3</title>
+</head>
+
+<body>
+	<h1>
+		Задача №3
+	</h1>
+	<p>
+		Створити об’єкт «Авто».
+		Авто
+		Поля(властивості)
+		Марка
+		Розмір бака
+		Кількість наявних літрів
+		Кількість місць
+		Кількість пасажирів
+		Методи (дії)
+		Заправка на вказану кількість літрів
+		Виведення кількості пасажирів
+		Додавання пасажирів
+		Висадка пасажирів
+	</p>
+	<hr>
+	<script>
+
+		function Auto(model, tankSize, numberOfLiters, numberOfSeats, numberOfPassengers) {
+			this.model = model
+			this.tankSize = tankSize
+			this.numberOfLiters = numberOfLiters
+			this.numberOfSeats = numberOfSeats
+			this.numberOfPassengers = numberOfPassengers
+		}
+		Auto.prototype.refueling = function (value) {
+			return this.numberOfLiters + value
+		}
+		Auto.prototype.sumNumberPassengers = function() {
+			return this.numberOfPassengers
+		}
+		Auto.prototype.minusPassengers = function (passengerNumber) {
+			return this.numberOfPassengers - passengerNumber
+		}
+		Auto.prototype.plusPassengers = function(passengerNumber) {
+			return this.numberOfPassengers + passengerNumber
+		}
+		let auto1 = new Auto('mers', 60, 20, 5, 2)
+		console.log(auto1)
+		let litrPlusFuel = auto1.refueling(10)
+		console.log(litrPlusFuel)
+		let numberOfPassengers = auto1.sumNumberPassengers()
+		console.log(numberOfPassengers)
+		let minPassengers = auto1.minusPassengers(1)
+		console.log(minPassengers)
+		let plusPas = auto1.plusPassengers(3)
+		console.log(plusPas)
+
+	</script>
+</body>
+
+</html>

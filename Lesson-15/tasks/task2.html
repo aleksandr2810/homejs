@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task2</title>
+</head>
+
+<body>
+	<h1>
+		Задача №2
+	</h1>
+	<p>
+		Створити об’єкт «Тир». У масиві зберігаються 1, якщо у цьому квадраті є заєць і 0 в іншому випадку.
+	</p>
+	<hr>
+	<script>
+
+		let tir = {
+			number: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+			shot: function () {
+				let i = 0
+				while (i < this.number.length && confirm(`Зробіть ${i + 1} постріл`)) {
+					this.number[i] = 0
+					i++
+					console.log(this.number)
+				}
+				return this.number
+			}
+		}
+
+		let result = tir.shot()
+		console.log(result)
+		document.write(`${result}`)
+
+	</script>
+</body>
+
+</html>

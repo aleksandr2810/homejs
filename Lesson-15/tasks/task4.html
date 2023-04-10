@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task4</title>
+</head>
+
+<body>
+	<h1>
+		Задача №4
+	</h1>
+	<p>
+		Розробити клас MultChecker для перевірки таблиці множення
+		Поля
+		Число, яке перевіряємо (наприклад, перевірка частини таблиці множення на 7)
+		Кількість правильних відповідей
+		Кількість неправильних відповідей
+		Методи
+		Генерування прикладу (метод випадковим чином визначає друге число, перше число фіксоване)
+		Перевірка правильності вказаної відповіді
+		render - виведення інформації про тестування на екран
+	</p>
+	<hr>
+	<script>
+
+		class MultChecker {
+			constructor(numberCheck){
+				this.numberCheck = numberCheck
+			}
+			getRandomNumber() {
+				const randomNumber = 1 + Math.floor(Math.random() * 10)
+				return randomNumber
+			}
+			responseCheck() {
+				let counterCorrectly = 0
+				let counterWrong = 0
+				for (let i = 0; i < 10; i++) {
+					let randomNumber = this.getRandomNumber()
+					let correctNumber = this.numberCheck * randomNumber
+					console.log(correctNumber)
+					let userNumber = prompt(`Скілки буде ${this.numberCheck} * ${randomNumber}`)
+					console.log(userNumber)
+					
+					if(userNumber == correctNumber) counterCorrectly++
+					else counterWrong++
+				}
+				return [counterCorrectly, counterWrong]
+			}
+			render() {
+				let answer = this.responseCheck()
+				document.write(`Кількість правильних відповідей - ${answer[0]} , неправильних - ${answer[1]}`)
+			}
+		}
+		let result = new MultChecker(7)
+		result.render()
+	</script>
+</body>
+
+</html>
