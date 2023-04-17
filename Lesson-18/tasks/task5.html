@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task5</title>
+</head>
+<script>
+
+	window.onload = function () {
+		let tableParent = document.createElement('table')
+		tableParent.setAttribute('border', '2px')
+		for (let i = 0; i < 3; i++) {
+			let trElement = document.createElement('tr')
+			for (let y = 0; y < 4; y++) {
+				let tdElement = document.createElement('td')
+				let randomNumber = Math.floor(Math.random() * 10)
+				tdElement.innerHTML = randomNumber
+				trElement.append(tdElement)
+			}
+			tableParent.append(trElement)
+		}
+
+		let divParent = document.getElementById('main')
+		divParent.append(tableParent)
+	}
+</script>
+
+<body>
+	<h1>
+		Задача №5
+	</h1>
+	<p>
+		Відобразити таблицю 3*4 з випадковими числами (її треба динамічно створити і вставити на сторінку)
+	</p>
+	<hr>
+	<div id="main">
+	</div>
+
+</body>
+
+</html>

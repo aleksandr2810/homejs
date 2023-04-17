@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task7</title>
+</head>
+<script>
+	let totalThreeStage = 0
+	function totalPrice() {
+		let transportPrice = parseFloat(document.getElementById('transport').value)
+
+		let food = document.getElementsByClassName('inp')
+		let sum = 0
+		for (const inp of food) {
+			if (inp.checked) sum += parseFloat(inp.value)
+		}
+
+		let gid = document.getElementsByClassName('radio')
+		let sum2 = 0
+		for (const inp of gid) {
+			if (inp.checked) sum2 += parseFloat(inp.value)
+		}
+
+		let totalSum = transportPrice + sum + sum2
+		console.log(totalSum)
+
+		totalThreeStage += totalSum
+		console.log(totalThreeStage)
+		let priceTotal = document.getElementById('totalPrice3').innerHTML = totalThreeStage
+	}
+
+	window.onload = function () {
+		document.getElementById('res').onclick = totalPrice
+	}
+</script>
+
+<body>
+	<h1>
+		Задача №7
+	</h1>
+	<p>
+		Подорож складається з 3 етапів. На кожному етапі користувач може вибрати один з видів транспорту (авто, автобус,
+		літак - випадаючий список), харчування (сніданок, обід, вечеря – checkbоx) та одного з 3-х гідів(використати -
+		radio buttons). Ціни визначте самі. Підрахувати загальну вартість.
+	</p>
+	<hr>
+	<div>
+		<label>
+			Вибрати транспорт
+			<select id="transport">
+				<option value="50">авто</option>
+				<option value="10">автобус</option>
+				<option value="250">літак</option>
+			</select>
+		</label>
+	</div>
+	<h1>Харчування</h1>
+	<div>
+		<label>
+			<input class="inp" type="checkbox" value="20" />
+			Сніданок
+		</label><br>
+		<label>
+			<input class="inp" type="checkbox" value="25" />
+			Обід
+		</label><br>
+		<label>
+			<input class="inp" type="checkbox" value="30" />
+			Вечеря
+		</label>
+	</div>
+	<h1>Гід</h1>
+	<div>
+		<input class="radio" type="radio" id="contact1" name="contact" value="100">
+		<label for="contact1">Гід № 1</label><br>
+
+		<input class="radio" type="radio" id="contact2" name="contact" value="150">
+		<label for="contact2">Гід № 2</label><br>
+
+		<input class="radio" type="radio" id="contact3" name="contact" value="200">
+		<label for="contact3">Гід № 3</label>
+	</div>
+	<div>
+		<button id="res" type="submit">count each step</button>
+	</div>
+	<div>
+		<p>Загальна вартість: <span id="totalPrice3"></span></p>
+	</div>
+
+
+</body>
+
+</html>

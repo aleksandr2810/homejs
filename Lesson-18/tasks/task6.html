@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task6</title>
+</head>
+<script>
+
+	function createTableInput() {
+		let tableParent = document.createElement('table')
+		tableParent.setAttribute('border', '2px')
+		let numberRatings = document.getElementById('numberOfRatings').value
+		for (let i = 0; i < numberRatings; i++) {
+			let trElement = document.createElement('tr')
+			let numberInput = document.createElement('input')
+			numberInput.classList.add('inp')
+			trElement.append(numberInput)
+			tableParent.append(trElement)
+		}
+		let divParent = document.getElementById('div')
+		divParent.append(tableParent)
+	}
+
+	function averageValue() {
+		let res = document.getElementById('result')
+		let inputArr = document.getElementsByClassName('inp')
+		console.log(inputArr)
+		let sum = 0
+		for (const elInput of inputArr) {
+			sum += parseFloat(elInput.value)
+		}
+		res.innerHTML = sum / 2
+	}
+</script>
+
+<body>
+	<h1>
+		Задача №6
+	</h1>
+	<p>
+		Користувач задає кількість оцінок і натискає на кнопку «get table». В результаті формується таблиця з input, куди
+		користувач вводить оцінки. Після цього натискає на кнопку “get sum” і знаходить середнє значення.
+	</p>
+	<hr>
+	<label>Price number <input id="numberOfRatings" value="" placeholder="2"></label><br>
+	<button id="getTable" onclick="createTableInput()">get table</button>
+	<hr>
+	<div id="div"></div>
+	<hr>
+	<button id="getSum" onclick="averageValue()">get sum</button>
+	<p>sum = <span id="result"></span></p>
+
+
+</body>
+
+</html>

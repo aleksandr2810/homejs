@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task1</title>
+</head>
+<script>
+
+	function addition() {
+		let firstNumber = parseFloat(document.getElementById('first').value)
+		let secondNumber = parseFloat(document.getElementById('second').value)
+		let sum = firstNumber + secondNumber
+		let resSum = document.getElementById('result').value = sum
+	}
+	function minus() {
+		let firstNumber = parseFloat(document.getElementById('first').value)
+		let secondNumber = parseFloat(document.getElementById('second').value)
+		let difference = firstNumber - secondNumber
+		let resDifference = document.getElementById('result').value = difference
+	}
+	function multi() {
+		let firstNumber = parseFloat(document.getElementById('first').value)
+		let secondNumber = parseFloat(document.getElementById('second').value)
+		let multiply = firstNumber * secondNumber
+		let resDifference = document.getElementById('result').value = multiply
+	}
+	function division() {
+		let firstNumber = parseFloat(document.getElementById('first').value)
+		let secondNumber = parseFloat(document.getElementById('second').value)
+		let division = firstNumber / secondNumber
+		let resDivision = document.getElementById('result').value = division
+	}
+	window.onload = function () {
+		document.getElementById('minus').onclick = minus
+		document.getElementById('multi').onclick = multi
+		document.getElementsByTagName('button')[3].onclick = division
+	}
+
+</script>
+
+<body>
+	<h1>
+		Задача №1
+	</h1>
+	<p>
+		Розробити калькулятор
+	</p>
+	<hr>
+	<label>First number<input id="first" value=""></label><br>
+	<label>Second number<input id="second" value=""></label><br>
+	<button onclick="addition()">Додати</button>
+	<button id="minus">Відняти</button>
+	<button id="multi">Помножити</button>
+	<button>Поділити</button><br>
+	<label>Результат<input id="result" value=""></label>
+</body>
+
+</html>

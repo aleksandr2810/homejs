@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task4</title>
+</head>
+<script>
+
+	window.onload = function () {
+		let arrDesires = ['love', 'enjoy', 'hope', 'faith', 'peace']
+		let num = Infinity
+		for (let i = 0; i < 3; i++) {
+			let random = Math.floor(Math.random() * 5)
+			let div = document.createElement('div')
+			div.innerHTML = arrDesires[random]
+			let divParent = document.getElementById('desires')
+			divParent.append(div)
+		}
+	}
+</script>
+
+<body>
+	<h1>
+		Задача №4
+	</h1>
+	<p>
+		Наперед задано у скрипті масив зі списком бажань. Після завантаження сторінки випадковим чином вибираються 3 і
+		відображаються у окремих div (їх треба створити і додати на сторінку)
+	</p>
+	<hr>
+	<div id="desires">
+	</div>
+
+</body>
+
+</html>
