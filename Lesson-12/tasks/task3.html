@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task3</title>
+</head>
+
+<body>
+	<h1>
+		Задача №3
+	</h1>
+	<p>
+		Дано масив 30 випадкових цілих чисел. Підрахувати скільки було обмінів під час сортування включеннями.
+	</p>
+	<hr>
+	<script>
+
+
+		function getRandomNumber() {
+			return Math.floor(Math.random() * 100)
+		}
+		// let random = getRandomNumber()
+		// console.log(random)
+
+		function array_30_numbers() {
+			let arrNum = []
+			for (let i = 0; i < 30; i++) {
+				let random = getRandomNumber()
+				arrNum.push(random)
+			}
+			return arrNum
+		}
+
+		let resArr = array_30_numbers()
+		console.log(resArr)
+		//------------------------------------------------------
+		let count = 0
+		function InsertionSort(resArr)       // A - массив, который нужно
+		{                               // отсортировать по возрастанию.
+			var n = resArr.length;
+			for (var i = 0; i < n; i++) {
+				var v = resArr[i], j = i - 1;
+				while (j >= 0 && resArr[j] > v) { resArr[j + 1] = resArr[j]; j--; count++ }
+				resArr[j + 1] = v;
+			}
+			return resArr;    // На выходе сортированный по возрастанию массив A.
+		}
+
+		let res = InsertionSort(resArr)
+		console.log(res)
+		console.log(count)
+		//-------------------------------------------------------
+
+	</script>
+</body>
+
+</html>

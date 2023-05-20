@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task2</title>
+</head>
+
+<body>
+	<h1>
+		Задача №2
+	</h1>
+	<p>
+		Дано масив 30 випадкових цілих чисел. Підрахувати скільки було обмінів під час сортування змішуванням.
+	</p>
+	<hr>
+	<script>
+
+		function getRandomNumber() {
+			return Math.floor(Math.random() * 100)
+		}
+		// let random = getRandomNumber()
+		// console.log(random)
+
+		function array_30_numbers() {
+			let arrNum = []
+			for (let i = 0; i < 30; i++) {
+				let random = getRandomNumber()
+				arrNum.push(random)
+			}
+			return arrNum
+		}
+
+		let resArr = array_30_numbers()
+		console.log(resArr)
+		
+		const swap = (arr, i, j) => {
+			const akum = arr[i]
+			arr[i] = arr[j]
+			arr[j] = akum
+		}
+
+		let count1 = 0
+
+		function shakerSort(resArr) {
+			let leftIndex = 0
+			let rightIndex = resArr.length - 1
+			while (leftIndex < rightIndex) {
+				for (let idx = leftIndex; idx < rightIndex; idx++) {
+					if (resArr[idx] > resArr[idx + 1]) {
+						count1++
+						swap(resArr, idx, idx + 1)
+					}
+				}
+				rightIndex--
+
+				for (let idx = rightIndex; idx > leftIndex; idx--) {
+					if (resArr[idx] < resArr[idx - 1]) {
+						count1++
+						swap(resArr, idx, idx - 1)
+					}
+				}
+				leftIndex++
+			}
+
+			return resArr
+		}
+
+		let res = shakerSort(resArr)
+
+
+		console.log(res)
+		console.log(count1)
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task6</title>
+</head>
+
+<body>
+	<h1>
+		Задача №6
+	</h1>
+	<p>
+		Дано масив імен. Застосовуючи відповідне сортування та бінарний пошук визначити, чи є у масиві ім’я довжиною 5
+		символів і під яким індексом.
+	</p>
+	<hr>
+	<script>
+
+		let arrNames = ['lena', 'nastya', 'alex', 'olga', 'kolyan', 'sasha', 'vladimir', 'ivan', 'dashadoter', 'roy']
+		console.log(arrNames)
+		arrNames.sort((el1, el2) => el1.length - el2.length)
+		console.log(arrNames)
+		// let r = arrNames[0].length
+		// console.log(r)
+
+		function searchElement(arr, number) {
+			let start = 0
+			let end = arr.length - 1
+			while (start <= end) {
+				const middle = Math.floor((start + end) / 2)
+				if (arr[middle].length === number) return middle
+				if (arr[middle].length < number) start = middle + 1
+				if (arr[middle].length > number) end = middle - 1
+			}
+			return -1
+		}
+
+		const res = searchElement(arrNames, 5)
+
+		if (res !== -1) alert(`имя входит в массив под номером ${res}`)
+		else alert('имя не входит в массив')
+
+	</script>
+</body>
+
+</html>

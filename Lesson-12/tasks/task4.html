@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task4</title>
+</head>
+
+<body>
+	<h1>
+		Задача №4
+	</h1>
+	<p>
+		Для розглянутих методів сортування спробувати вивести етапи сортування шляхом виведення відповідних таблиць за
+		зразком.
+		Тобто кожного разу після обміну елементів вивести поточний стан масиву на екран.
+	</p>
+	<hr>
+	<script>
+
+		function getRandomNumber() {
+			return Math.floor(Math.random() * 100)
+		}
+		// let random = getRandomNumber()
+		// console.log(random)
+
+		function array_30_numbers() {
+			let arrNum = []
+			for (let i = 0; i < 30; i++) {
+				let random = getRandomNumber()
+				arrNum.push(random)
+			}
+			return arrNum
+		}
+
+		let resArr = array_30_numbers()
+		console.log(resArr)
+
+		let changed
+		let count = 0
+		do {
+			changed = false
+			for (let i = 1; i < resArr.length; i++) {
+				if (resArr[i - 1] > resArr[i]) {
+					count++
+					let tmp = resArr[i - 1];
+					resArr[i - 1] = resArr[i]
+					resArr[i] = tmp
+					changed = true;
+					console.log(`Изменение: ${count} Массив ${resArr}`)
+				}
+			}
+		}
+		while (changed)
+
+		console.log(resArr)
+		console.log(count)
+
+
+	</script>
+</body>
+
+</html>
